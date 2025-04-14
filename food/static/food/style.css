@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(255, 233, 153);
+}
+
+/* فاصله دادن بین Navbar و کارت‌ها */
+.custom-container {
+    margin-top: 60px;
+}
+
+.bg-custom {
+    background-color: #4B2E2E !important;  /* قهوه‌ای تیره */
+}
+
+.detail-btn {
+    background-color: #8d6b57;  /* رنگ قهوه‌ای اولیه */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.detail-btn:hover {
+    background-color: #F5F5DC;  /* پس‌زمینه شیری */
+    color: #4B2E2E;  /* متن قهوه‌ای تیره */
+}
+
+/* افکت هاور برای عکس */
+.card img {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* افکت هاور روی کل کارت */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.08); /* کارت را 5% بزرگ‌تر می‌کند */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0); /* سایه قوی‌تر هنگام هاور */
+}
+
+.card:hover img {
+    transform: scale(1.04); /* عکس داخل کارت هم بزرگ‌تر شود */
+}
+
+.detail-img {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.detail-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.detail-card {
+    background: #f9f5ea;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-top: -10px;
+}
+
+.detail-card:hover {
+    transform: scale(1.02);
+}
+
+/* مدیا کوئری برای صفحه‌های کوچک‌تر (موبایل) */
+@media (max-width: 768px) {
+    /* تغییر اندازه دکمه‌ها */
+    .detail-btn {
+        padding: 8px 16px;
+    }
+
+    /* تغییر اندازه تصاویر */
+    .detail-img {
+        max-height: 250px;
+    }
+
+    /* تنظیم فاصله برای navbar */
+    .custom-container {
+        margin-top: 30px;
+    }
+
+    /* تنظیم اندازه فونت برای navbar */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    /* افزایش عرض برای کارت‌ها */
+    .card {
+        margin-bottom: 15px;
+    }
+
+    /* کاهش سایز padding برای کارت‌ها */
+    .detail-card {
+        padding: 10px;
+    }
+}
+
+/* مدیا کوئری برای صفحه‌های بزرگ‌تر (تبلت) */
+@media (max-width: 1024px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .custom-container {
+        margin-top: 50px;
+    }
+
+    .detail-btn {
+        padding: 9px 18px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .detail-card {
+        padding: 12px;
+    }
+}

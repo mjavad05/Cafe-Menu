@@ -1,0 +1,26 @@
+{% extends 'food/base.html' %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img class="detail-img img-fluid" src="{{ item.item_image }}" alt="{{ item.item_name }}">
+        </div>
+        <div class="col-md-6">
+            <div class="detail-card">
+                <h1 class="card-title">{{ object.item_name }}</h1>
+                <h4 class="text-muted">{{object.item_desc }}</h4>
+                <h3 class="text-success fw-bold">{{ object.item_price }} T</h3>
+
+                <div class="mt-4 d-flex gap-3">
+                    <a href="{% url 'food:update-item' item.id %}" class="btn btn-outline-primary px-4 w-50">
+                        ✏️ Update
+                    </a>
+                    <a href="{% url 'food:delete-item' item.id %}" class="btn btn-outline-danger px-4 w-50">
+                        🗑️ Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

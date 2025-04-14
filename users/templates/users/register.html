@@ -1,0 +1,24 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<div class="container mt-5" style="max-width: 500px;">
+    <div class="card shadow-sm p-4" style="border-radius: 15px; background-color: #fffaf0;">
+        <h3 class="text-center mb-4" style="color: #4B2E2E;">Signup</h3>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="mb-3">
+                    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="text-danger small mt-1">{{ field.errors.0 }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="d-grid">
+                <button type="submit" class="btn detail-btn">submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'food/base.html' %}
+{% block body %}
+
+<div class="container mt-5" style="max-width: 400px;">
+    <div class="card shadow-sm p-4" style="border-radius: 15px; background-color: #fffaf0;">
+        <h3 class="text-center mb-4" style="color: #4B2E2E;">Login</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="mb-3">
+                    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="text-danger small">{{ field.errors.0 }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="d-grid">
+                <button type="submit" class="btn detail-btn">submit</button>
+            </div>
+        </form>
+        <div class="text-center mt-3">
+            <p>do not have an account?   <a href="/register" class="text-decoration-none" style="color: #4B2E2E; font-weight: bold;">Register</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
